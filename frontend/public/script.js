@@ -34,11 +34,21 @@ document
       if (response.ok) {
         resultsDiv.innerHTML = `
                 <h2>Solar ROI Results</h2>
-                <p><strong>Initial Solar Cost:</strong> ${result.initialSolarCost} Naira</p>
-                <p><strong>Initial Generator Cost:</strong> ${result.initialGeneratorCost} Naira</p>
-                <p><strong>Monthly Operating Generator Cost:</strong> ${result.monthlyOperatingGeneratorCost} Naira</p>
-                <p><strong>Yearly Operating Generator Cost:</strong> ${result.yearlyOperatingGeneratorCost} Naira</p>
-                <p><strong>How long for cumulative generator cost to equal initial solar cost:</strong> ${result.breakEvenYears} years and ${result.remainingMonths} months</p>
+                <p><strong>Initial Solar Cost:</strong> ${Math.round(
+                  result.initialSolarCost
+                ).toLocaleString()} Naira</p>
+                <p><strong>Initial Generator Cost:</strong> ${Math.round(
+                  result.initialGeneratorCost
+                ).toLocaleString()} Naira</p>
+                <p><strong>Monthly Operating Generator Cost:</strong> ${Math.round(
+                  result.monthlyOperatingGeneratorCost
+                ).toLocaleString()} Naira</p>
+                <p><strong>Yearly Operating Generator Cost:</strong> ${Math.round(
+                  result.yearlyOperatingGeneratorCost
+                ).toLocaleString()} Naira</p>
+                <p><strong>How long for cumulative generator cost to equal initial solar cost:</strong> ${
+                  result.breakEvenYears
+                } years and ${result.remainingMonths} months</p>
             `;
       } else {
         resultsDiv.innerHTML = `<p>Error: ${result.message}</p>`;
