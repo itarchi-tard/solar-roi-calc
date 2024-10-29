@@ -12,37 +12,37 @@
     <div class="container">
       <h1>Solar ROI Calculator</h1>
       <form id="roiForm">
-        <label for="kWhConsumed">Monthly kWh Consumed:</label>
+        <label for="kWhConsumed">Power Consumed:</label>
         <input
           type="number"
           id="kWhConsumed"
           name="kWhConsumed"
-          placeholder="Enter monthly kWh consumed"
+          placeholder="Enter your monthly kWh consumed"
           required
         />
 
-        <label for="hoursOfNepaLight">Daily Hours of Grid Light:</label>
+        <label for="hoursOfNepaLight">NEPA Light:</label>
         <input
           type="number"
           id="hoursOfNepaLight"
           name="hoursOfNepaLight"
-          placeholder="Enter hours of daily NEPA light"
+          placeholder="Enter your hours of daily NEPA light"
           required
         />
 
-        <label for="userBackupTime">Desired Operating hours:</label>
+        <label for="userBackupTime">Operating hours:</label>
         <input
           type="number"
           id="userBackupTime"
           name="userBackupTime"
-          placeholder="Enter desired backup time"
+          placeholder="Enter your desired operating time"
           required
         />
 
         <button type="submit">Calculate ROI</button>
       </form>
 
-      <div id="results"></div>
+      <div id="results" class="results-container"></div>
     </div>
     <script src="script.js"></script>
   </body>

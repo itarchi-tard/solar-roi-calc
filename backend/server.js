@@ -1,6 +1,8 @@
 const express = require("express");
 const path = require("path");
 const roiRoutes = require("./routes/roiRoutes");
+const adminRoutes = require("./routes/adminRoutes");
+
 require("dotenv").config();
 
 const app = express();
@@ -14,6 +16,7 @@ app.use(express.static(path.join(__dirname, "../frontend/public")));
 
 // API routes
 app.use("/api/v1", roiRoutes);
+app.use("/api/v1", adminRoutes);
 
 // Catch-all route to handle unknown routes (but avoid overriding known files like admin.html)
 app.get("/", (req, res) => {

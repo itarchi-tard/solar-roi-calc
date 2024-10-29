@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="adminDashboard.css" />
+  </head>
+  <body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <h2>Admin Panel</h2>
+      <nav>
+        <button onclick="showSection('generators')">Generators</button>
+        <button onclick="showSection('inverters')">Inverters</button>
+        <button onclick="showSection('solar_charge_controllers')">
+          Solar Charge Controllers
+        </button>
+        <button onclick="logout()">Logout</button>
+      </nav>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <!-- Generators Section -->
+      <section id="generators-section" class="content-section">
+        <h2>Manage Generators</h2>
+        <table id="generatorsTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Size (W)</th>
+              <th>Cost (Naira)</th>
+              <th>Fuel Consumption (L/hr)</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <button class="notion-btn add-btn" onclick="openAddModal('generators')">
+          Add New Generator
+        </button>
+      </section>
+
+      <!-- Inverters Section -->
+      <section
+        id="inverters-section"
+        class="content-section"
+        style="display: none"
+      >
+        <h2>Manage Inverters</h2>
+        <table id="invertersTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Size (W)</th>
+              <th>Cost (Naira)</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <button class="notion-btn add-btn" onclick="openAddModal('inverters')">
+          Add New Inverter
+        </button>
+      </section>
+
+      <!-- Solar Charge Controllers Section -->
+      <section
+        id="solar_charge_controllers-section"
+        class="content-section"
+        style="display: none"
+      >
+        <h2>Manage Solar Charge Controllers</h2>
+        <table id="solar_charge_controllersTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Size</th>
+              <th>Cost (Naira)</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <button
+          class="notion-btn add-btn"
+          onclick="openAddModal('solar_charge_controllers')"
+        >
+          Add New Solar Charge Controller
+        </button>
+      </section>
+    </div>
+
+    <!-- Add Modal Template -->
+    <div id="addModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('addModal')">&times;</span>
+        <h3>Add New Entry</h3>
+        <form id="addForm">
+          <!-- Dynamic form fields will be injected here based on the section -->
+          <button type="submit">Add</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Update Modal Template -->
+    <div id="updateModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('updateModal')">&times;</span>
+        <h3>Update Entry</h3>
+        <form id="updateForm">
+          <!-- Dynamic form fields will be injected here based on the section -->
+          <button type="submit">Update</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="adminScript.js"></script>
+  </body>
+</html>
